@@ -6,7 +6,7 @@ const WhatsAppPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openWhatsApp = () => {
-    const phoneNumber = "6281234567890"; // Ganti dengan nomor aktual
+    const phoneNumber = "6289637394846"; // Ganti dengan nomor aktual
     const message = "Halo! Saya ingin bertanya tentang motor Anda.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
