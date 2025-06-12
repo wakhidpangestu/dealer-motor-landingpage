@@ -13,10 +13,13 @@ const images = [
 
 const Gallery: React.FC = () => {
   return (
-    <section className="py-12 px-4 md:px-12 max-w-screen-xl mx-auto">
+    <section
+      id="gallery"
+      className="py-12 px-4 md:px-12 max-w-screen-xl mx-auto"
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500 text-center mb-4">
-  Galeri Testimoni
-</h2>
+        Galeri Testimoni
+      </h2>
       <p className="text-center text-black-600 mb-8">
         Lihat koleksi motor yang telah kami kirimkan kepada pelanggan kami.
       </p>

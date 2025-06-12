@@ -1,7 +1,13 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Home, Package, ShoppingCart, Phone } from 'lucide-react';
+import { Home, Package, ShoppingCart, Phone, } from 'lucide-react';
+import {
+  HomeIcon,
+  ShoppingBagIcon,
+  CameraIcon,
+  ChatBubbleLeftRightIcon,
+  PhoneIcon,
+} from '@heroicons/react/24/outline';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,11 +20,22 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  // Desktop menu with lucide-react icons
   const menuItems = [
     { id: 'home', label: 'Beranda', icon: Home },
-    { id: 'products', label: 'Produk', icon: Package },
+    { id: 'products', label: 'Katalog', icon: Package },
+    { id: 'gallery', label: 'Galeri', icon: CameraIcon },
     { id: 'order', label: 'Pesan', icon: ShoppingCart },
     { id: 'contact', label: 'Kontak', icon: Phone }
+  ];
+
+  // Mobile menu with heroicons
+  const mobileMenuItems = [
+    { id: 'home', label: 'Beranda', icon: HomeIcon },
+    { id: 'products', label: 'Katalog', icon: ShoppingBagIcon },
+    { id: 'gallery', label: 'Galeri', icon: CameraIcon },
+    { id: 'order', label: 'Pesan', icon: ChatBubbleLeftRightIcon },
+    { id: 'contact', label: 'Kontak', icon: PhoneIcon }
   ];
 
   return (
@@ -69,8 +86,8 @@ const Header = () => {
         transition={{ duration: 0.6 }}
         className="fixed bottom-0 left-0 right-0 z-50 md:hidden glass-morphism border-t border-white/20"
       >
-        <div className="grid grid-cols-4 py-2">
-          {menuItems.map((item) => {
+        <div className="grid grid-cols-5 py-2">
+          {mobileMenuItems.map((item) => {
             const Icon = item.icon;
             return (
               <motion.button
@@ -79,7 +96,7 @@ const Header = () => {
                 onClick={() => scrollToSection(item.id)}
                 className="flex flex-col items-center justify-center py-2 px-1 text-foreground hover:text-primary transition-colors duration-300"
               >
-                <Icon size={20} className="mb-1" />
+                <Icon className="w-6 h-6 mb-1" />
                 <span className="text-xs font-medium">{item.label}</span>
               </motion.button>
             );
